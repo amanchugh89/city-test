@@ -25,7 +25,7 @@ public class LocationAPI {
     * get all cities for the keyword
     */
     public List<City> allCities(String city){
-        if(city!=null || city.trim().length()>0 ) {
+        if(city!=null && city.trim().length()>0 ) {
             City[] cities = restTemplate.getForObject(URL.concat(city), City[].class);
             return Arrays.asList(cities);
         }
